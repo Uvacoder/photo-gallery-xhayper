@@ -1,4 +1,4 @@
-import { Link, Route, Routes } from "react-router-dom";
+import { Link, Outlet, Route, Routes } from "react-router-dom";
 import "./App.scss";
 
 function About() {
@@ -38,13 +38,30 @@ function Home() {
 
 function Layout() {
     return (
-        <nav>
-            <ul>
-                <li>
-                    <Link to="/">Home</Link>
-                </li>
-            </ul>
-        </nav>
+        <div>
+            {/* A "layout route" is a good place to put markup you want to
+          share across all the pages on your site, like navigation. */}
+            <nav>
+                <ul>
+                    <li>
+                        <Link to="/">Home</Link>
+                    </li>
+                    <li>
+                        <Link to="/about">About</Link>
+                    </li>
+                    <li>
+                        <Link to="/dashboard">Dashboard</Link>
+                    </li>
+                    <li>
+                        <Link to="/nothing-here">Nothing Here</Link>
+                    </li>
+                </ul>
+            </nav>
+
+            <hr />
+
+            <Outlet />
+        </div>
     );
 }
 
