@@ -12,6 +12,10 @@
         "lint": "prettier --check \"src/**/*\""
     },
     "dependencies": {
+        "@chakra-ui/react": "^2.3.2",
+        "@emotion/react": "^11",
+        "@emotion/styled": "^11",
+        "framer-motion": "^6",
         "react": "^18.2.0",
         "react-dom": "^18.2.0"
     },
@@ -19,6 +23,7 @@
         "@types/react": "^18.0.20",
         "@types/react-dom": "^18.0.6",
         "@vitejs/plugin-react": "^2.1.0",
+        "autoprefixer": "^10.4.11",
         "husky": "^8.0.1",
         "prettier": "^2.7.1",
         "sass": "^1.54.9",
