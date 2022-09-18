@@ -1,3 +1,5 @@
+// TODO: Rewrite this component
+
 import { HamburgerIcon, CloseIcon, ChevronDownIcon, ChevronRightIcon, MoonIcon, SunIcon } from "@chakra-ui/icons";
 import { Link as RouteLink } from "react-router-dom";
 import {
@@ -304,43 +306,16 @@ interface NavItem {
 
 const NAV_ITEMS: Array<NavItem> = [
     {
-        label: "Submenu",
-        children: [
-            {
-                label: "About",
-                subLabel: "aeiou",
-                link: "/about"
-            },
-            {
-                label: "Nothingness",
-                subLabel: "uoiea"
-            }
-        ]
+        label: "Home",
+        link: "/"
     },
     {
-        label: "Submenu 2",
-        children: [
-            {
-                label: "Nothingness",
-                subLabel: "uoiea"
-            },
-            {
-                label: "null",
-                subLabel: "uoiea",
-                link: "/null"
-            }
-        ]
+        label: "About",
+        link: "/about"
     },
     {
-        label: "Dashboard",
-        link: "/dashboard"
-    },
-    {
-        label: "Nothingness"
-    },
-    {
-        label: "null",
-        link: "/null"
+        label: "Gallery",
+        link: "/gallery"
     }
 ];
 

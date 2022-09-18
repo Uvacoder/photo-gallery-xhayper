@@ -1,6 +1,7 @@
 import { Routes, Route, Outlet } from "react-router-dom";
 import NotImplemented from "./routes/not-implemented";
 import Navbar from "./components/Navbar";
+import Gallery from "./routes/gallery";
 import Root from "./routes/root";
 
 export default function App() {
@@ -8,8 +9,7 @@ export default function App() {
         <Routes>
             <Route path="/" element={<Layout />}>
                 <Route index element={<Root />} />
-                <Route path="about" element={<About />} />
-                <Route path="dashboard" element={<Dashboard />} />
+                <Route path="gallery" element={<Gallery />} />
                 <Route path="*" element={<NotImplemented />} />
             </Route>
         </Routes>

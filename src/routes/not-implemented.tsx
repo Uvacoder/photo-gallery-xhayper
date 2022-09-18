@@ -1,10 +1,9 @@
-import * as React from "react";
+import { Center } from "@chakra-ui/react";
 
 export default function NotImplemented() {
     return (
-        <div>
-            <h1>WOOPS!</h1>
+        <Center>
             <p>Sorry, this page is not implemented yet.</p>
-        </div>
+        </Center>
     );
 }
