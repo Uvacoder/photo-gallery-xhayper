@@ -24,7 +24,7 @@ const galleryData: ImageObject[][] = [
     [
         {
             src: new URL("/gallery/hayper/IMG_0497_EDITED.png", import.meta.url).href,
-            tooltip: "The first art of my sona ever, edited to add the height"
+            tooltip: "First art of my new main sona ever, edited to add the height"
         },
         {
             src: new URL("/gallery/hayper/hayper_wolf.png", import.meta.url).href
