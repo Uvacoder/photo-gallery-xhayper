@@ -39,6 +39,9 @@ const galleryData: ImageObject[][] = [
         {
             src: new URL("/gallery/hayper/com.png", import.meta.url).href,
             tooltip: "Changed moderator's group image"
+        },
+        {
+            src: new URL("/gallery/hayper/WolfMan.png", import.meta.url).href,
         }
     ],
     [
