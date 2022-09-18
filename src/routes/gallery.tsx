@@ -126,7 +126,14 @@ export default function Gallery() {
         <>
             {galleryData.map((gridRow, gridIndex, gridArr) => (
                 <div key={`grid-${gridIndex}`}>
-                    <SimpleGrid minChildWidth={"15rem"} gap="1rem" mt="1rem" mx="1rem" h="fit-content">
+                    <SimpleGrid
+                        minChildWidth={"15rem"}
+                        gap="1rem"
+                        mt="1rem"
+                        mb={gridIndex == gridArr.length - 1 ? "1rem" : ""}
+                        mx="1rem"
+                        h="fit-content"
+                    >
                         {gridRow.map((image, imageIndex) => {
                             return (
                                 <div key={`image-${gridIndex}-${imageIndex}`}>
