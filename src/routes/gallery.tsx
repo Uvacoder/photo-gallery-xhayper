@@ -109,6 +109,12 @@ const galleryData: ImageObject[][] = [
         {
             src: new URL("/gallery/old_hayper/472_Sem_Titulo-1.jpg", import.meta.url).href
         }
+    ],
+    [
+        {
+            src: new URL("/gallery/other/Untitled56_20220918142849.png", import.meta.url).href,
+            tooltip: "Circle in a maid dress"
+        }
     ]
 ];
 
