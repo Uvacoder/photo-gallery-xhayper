@@ -232,7 +232,7 @@ export default function Gallery() {
                                                 width={typeof (image.imageData) == "string" ? 240 : image.imageData.width}
                                                 height={typeof (image.imageData) == "string" ? 240 : image.imageData.height}
                                                 placeholder={typeof (image.imageData) != "string" && image.imageData.blurDataURL ? "blur" : "empty"}
-                                                style={{ objectFit: "scale-down", minWidth: "15rem", minHeight: "15rem", maxWidth: "15rem", maxHeight: "15rem" }}
+                                                style={{ objectFit: "scale-down", minWidth: "15rem", minHeight: "15rem", maxWidth: "15rem", maxHeight: "15rem", cursor: "pointer" }}
                                                 onClick={() => {
                                                     setCurrentImage(image);
                                                     onOpen();
