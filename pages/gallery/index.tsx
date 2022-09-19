@@ -1,6 +1,6 @@
 import { FC, useState, ReactElement } from "react";
 import { StaticImageData } from "next/image";
-import NextImage from 'next/future/image';
+import Image from 'next/future/image';
 import {
     SimpleGrid,
     Tooltip,
@@ -13,7 +13,6 @@ import {
     ModalOverlay,
     Divider,
     Text,
-    Image,
     Box,
 } from "@chakra-ui/react";
 
@@ -50,9 +49,44 @@ import img27 from "../../public/gallery/old_hayper/472_Sem_Titulo-1.jpg";
 
 import img28 from "../../public/gallery/other/Untitled56_20220918142849.png";
 
+////////////////////
+
+const img0_url = "/gallery/hayper/IMG_0497_EDITED.png";
+const img1_url = "/gallery/hayper/hayper_wolf.png";
+const img2_url = "/gallery/hayper/WOOOO.png";
+const img3_url = "/gallery/hayper/Untitled1831_20220816162333.png";
+const img4_url = "/gallery/hayper/com.png";
+const img5_url = "/gallery/hayper/WolfMan.png";
+
+const img6_url = "/gallery/old_hayper/headshot_transparent.png";
+const img7_url = "/gallery/old_hayper/Untitled1883_20210904174428.png";
+const img8_url = "/gallery/old_hayper/Untitled453_20210515144557.png";
+const img9_url = "/gallery/old_hayper/sketch-1593639014980.png";
+const img10_url = "/gallery/old_hayper/sketch-1593477463861.png";
+const img11_url = "/gallery/old_hayper/sketch-1593360442075.png";
+const img12_url = "/gallery/old_hayper/Screenshot_20211006-031117_FlipaClip.jpg";
+const img13_url = "/gallery/old_hayper/Screenshot_2652.png";
+const img14_url = "/gallery/old_hayper/Maid_Hayper.png";
+const img15_url = "/gallery/old_hayper/hayper(1).png";
+const img16_url = "/gallery/old_hayper/hayper_socc_blep.png";
+const img17_url = "/gallery/old_hayper/Hayper_Portrait.png";
+const img18_url = "/gallery/old_hayper/haykat.png";
+const img19_url = "/gallery/old_hayper/hayden.gif";
+const img20_url = "/gallery/old_hayper/Goat.png";
+const img21_url = "/gallery/old_hayper/femmaid hayper.png";
+const img22_url = "/gallery/old_hayper/20210630_002512.png";
+const img23_url = "/gallery/old_hayper/20201031_141531.png";
+const img24_url = "/gallery/old_hayper/20201006_230127.jpg";
+const img25_url = "/gallery/old_hayper/1837_20220726235537.png";
+const img26_url = "/gallery/old_hayper/1037_Sem_Titulo.png";
+const img27_url = "/gallery/old_hayper/472_Sem_Titulo-1.jpg";
+
+const img28_url = "/gallery/other/Untitled56_20220918142849.png";
+
+const useURLForImage = true;
 
 export type ImageObject = {
-    imageData: StaticImageData;
+    imageData: StaticImageData | string;
     alt?: string;
     tooltip?: string;
 };
@@ -60,99 +94,99 @@ export type ImageObject = {
 const galleryData: ImageObject[][] = [
     [
         {
-            imageData: img0,
+            imageData: useURLForImage ? img0_url : img0,
             tooltip: "First art of my new main sona ever, edited to add the height"
         },
         {
-            imageData: img1
+            imageData: useURLForImage ? img1_url : img1
         },
         {
-            imageData: img2,
+            imageData: useURLForImage ? img2_url : img2,
             tooltip: "My friend comissioned this for me, i added VSC to the computer screen"
         },
         {
-            imageData: img3
+            imageData: useURLForImage ? img3_url : img3
         },
         {
-            imageData: img4,
+            imageData: useURLForImage ? img4_url : img4,
             tooltip: "Changed moderator's group image"
         },
         {
-            imageData: img5,
+            imageData: useURLForImage ? img5_url : img5,
         }
     ],
     [
         {
-            imageData: img6,
+            imageData: useURLForImage ? img6_url : img6,
             tooltip: "My old main fursona, a black cat"
         },
         {
-            imageData: img7
+            imageData: useURLForImage ? img7_url : img7
         },
         {
-            imageData: img8
+            imageData: useURLForImage ? img8_url : img8
         },
         {
-            imageData: img9
+            imageData: useURLForImage ? img9_url : img9
         },
         {
-            imageData: img10
+            imageData: useURLForImage ? img10_url : img10
         },
         {
-            imageData: img11
+            imageData: useURLForImage ? img11_url : img11
         },
         {
-            imageData: img12
+            imageData: useURLForImage ? img12_url : img12
         },
         {
-            imageData: img13
+            imageData: useURLForImage ? img13_url : img13
         },
         {
-            imageData: img14
+            imageData: useURLForImage ? img14_url : img14
         },
         {
-            imageData: img15
+            imageData: useURLForImage ? img15_url : img15
         },
         {
-            imageData: img16
+            imageData: useURLForImage ? img16_url : img16
         },
         {
-            imageData: img17
+            imageData: useURLForImage ? img17_url : img17
         },
         {
-            imageData: img18
+            imageData: useURLForImage ? img18_url : img18
         },
         {
-            imageData: img19
+            imageData: useURLForImage ? img19_url : img19
         },
         {
-            imageData: img20
+            imageData: useURLForImage ? img20_url : img20
         },
         {
-            imageData: img21
+            imageData: useURLForImage ? img21_url : img21
         },
         {
-            imageData: img22
+            imageData: useURLForImage ? img22_url : img22
         },
         {
-            imageData: img23
+            imageData: useURLForImage ? img23_url : img23
         },
         {
-            imageData: img24
+            imageData: useURLForImage ? img24_url : img24
         },
         {
-            imageData: img25
+            imageData: useURLForImage ? img25_url : img25
         },
         {
-            imageData: img26
+            imageData: useURLForImage ? img26_url : img26
         },
         {
-            imageData: img27
+            imageData: useURLForImage ? img27_url : img27
         }
     ],
     [
         {
-            imageData: img28,
+            imageData: useURLForImage ? img28_url : img28,
             tooltip: "Circle in a maid dress"
         }
     ]
@@ -192,10 +226,10 @@ export default function Gallery() {
                                         wrapper={(children) => <Tooltip label={image.tooltip}>{children}</Tooltip>}
                                     >
                                         <Box boxSize={"15rem"}>
-                                            <NextImage
+                                            <Image
                                                 src={image.imageData}
                                                 alt={image.alt ?? ""}
-                                                placeholder={image.imageData.blurDataURL ? "blur" : "empty"}
+                                                placeholder={typeof (image.imageData) != "string" && image.imageData.blurDataURL ? "blur" : "empty"}
                                                 style={{ objectFit: "scale-down", maxWidth: "15rem", maxHeight: "15rem" }}
                                                 onClick={() => {
                                                     setCurrentImage(image);
@@ -220,10 +254,10 @@ export default function Gallery() {
                         <ModalCloseButton />
                         <ModalBody mb={"0.5rem"}>
                             {currentImage!.tooltip != null && <Text mb="1rem">{currentImage!.tooltip}</Text>}
-                            <NextImage
+                            <Image
                                 src={currentImage!.imageData}
                                 alt={currentImage!.alt ?? ""}
-                                placeholder={currentImage!.imageData.blurDataURL ? "blur" : "empty"}
+                                placeholder={typeof (currentImage!.imageData) != "string" && currentImage!.imageData.blurDataURL ? "blur" : "empty"}
                                 quality={100}
                                 priority={true}
                             />
