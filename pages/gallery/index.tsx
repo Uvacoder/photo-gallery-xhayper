@@ -229,8 +229,10 @@ export default function Gallery() {
                                             <Image
                                                 src={image.imageData}
                                                 alt={image.alt ?? ""}
+                                                width={typeof (image.imageData) == "string" ? 240 : image.imageData.width}
+                                                height={typeof (image.imageData) == "string" ? 240 : image.imageData.height}
                                                 placeholder={typeof (image.imageData) != "string" && image.imageData.blurDataURL ? "blur" : "empty"}
-                                                style={{ objectFit: "scale-down", maxWidth: "15rem", maxHeight: "15rem" }}
+                                                style={{ objectFit: "scale-down", minWidth: "15rem", minHeight: "15rem", maxWidth: "15rem", maxHeight: "15rem" }}
                                                 onClick={() => {
                                                     setCurrentImage(image);
                                                     onOpen();
@@ -257,6 +259,9 @@ export default function Gallery() {
                             <Image
                                 src={currentImage!.imageData}
                                 alt={currentImage!.alt ?? ""}
+                                width={typeof (currentImage!.imageData) == "string" ? 0 : currentImage!.imageData.width}
+                                height={typeof (currentImage!.imageData) == "string" ? 0 : currentImage!.imageData.height}
+                                style={{ minWidth: "100%", minHeight: "100%" }}
                                 placeholder={typeof (currentImage!.imageData) != "string" && currentImage!.imageData.blurDataURL ? "blur" : "empty"}
                                 quality={100}
                                 priority={true}
