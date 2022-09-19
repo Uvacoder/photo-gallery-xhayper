@@ -18,6 +18,8 @@ import {
     Box,
 } from "@chakra-ui/layout";
 
+// Next Image: 30
+
 // god save my life
 import img0 from "../../public/gallery/hayper/IMG_0497_EDITED.png";
 import img1 from "../../public/gallery/hayper/hayper_wolf.png";
@@ -25,6 +27,7 @@ import img2 from "../../public/gallery/hayper/WOOOO.png";
 import img3 from "../../public/gallery/hayper/Untitled1831_20220816162333.png";
 import img4 from "../../public/gallery/hayper/com.png";
 import img5 from "../../public/gallery/hayper/WolfMan.png";
+import img29 from "../../public/gallery/hayper/PURPLEE.png";
 
 import img6 from "../../public/gallery/old_hayper/headshot_transparent.png";
 import img7 from "../../public/gallery/old_hayper/Untitled1883_20210904174428.png";
@@ -59,6 +62,7 @@ const img2_url = "/gallery/hayper/WOOOO.png";
 const img3_url = "/gallery/hayper/Untitled1831_20220816162333.png";
 const img4_url = "/gallery/hayper/com.png";
 const img5_url = "/gallery/hayper/WolfMan.png";
+const img29_url = "/gallery/hayper/PURPLEE.png";
 
 const img6_url = "/gallery/old_hayper/headshot_transparent.png";
 const img7_url = "/gallery/old_hayper/Untitled1883_20210904174428.png";
@@ -115,6 +119,10 @@ const galleryData: ImageObject[][] = [
         },
         {
             imageData: useURLForImage ? img5_url : img5,
+        },
+        {
+            imageData: useURLForImage ? img29_url : img29,
+            tooltip: "*INHALES* PURPLEEEEEEEEEE"
         }
     ],
     [
