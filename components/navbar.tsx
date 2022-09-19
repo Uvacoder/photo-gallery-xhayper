@@ -1,7 +1,7 @@
 // TODO: Rewrite this component
 
 import { HamburgerIcon, CloseIcon, ChevronDownIcon, ChevronRightIcon, MoonIcon, SunIcon } from "@chakra-ui/icons";
-import { Link as RouteLink } from "react-router-dom";
+import RouteLink from "next/link";
 import {
     Box,
     Flex,
@@ -84,7 +84,7 @@ const DesktopNav = () => {
                     <Popover trigger={"hover"} placement={"bottom-start"}>
                         <PopoverTrigger>
                             {navItem.link ? (
-                                <RouteLink to={navItem.link}>
+                                <RouteLink href={navItem.link}>
                                     <Link
                                         p={2}
                                         fontSize={"sm"}
@@ -138,16 +138,18 @@ const DesktopNav = () => {
 };
 
 const DesktopSubNav = ({ label, link, subLabel }: NavItem) => {
+    const hoverColor = useColorModeValue("pink.50", "gray.900");
+
     return (
         <>
             {link != null ? (
-                <RouteLink to={link}>
+                <RouteLink href={link}>
                     <Link
                         role={"group"}
                         display={"block"}
                         p={2}
                         rounded={"md"}
-                        _hover={{ bg: useColorModeValue("pink.50", "gray.900") }}
+                        _hover={{ bg: hoverColor }}
                     >
                         <Stack direction={"row"} align={"center"}>
                             <Box>
@@ -176,7 +178,7 @@ const DesktopSubNav = ({ label, link, subLabel }: NavItem) => {
                     display={"block"}
                     p={2}
                     rounded={"md"}
-                    _hover={{ bg: useColorModeValue("pink.50", "gray.900") }}
+                    _hover={{ bg: hoverColor }}
                 >
                     <Stack direction={"row"} align={"center"}>
                         <Box>
@@ -216,11 +218,13 @@ const MobileNav = () => {
 const MobileNavItem = ({ label, children, link }: NavItem) => {
     const { isOpen, onToggle } = useDisclosure();
 
+    const textColor = useColorModeValue("gray.600", "gray.200");
+
     return (
         <Stack spacing={4} onClick={children && onToggle}>
             <>
                 {link != null ? (
-                    <RouteLink to={link}>
+                    <RouteLink href={link}>
                         <Flex
                             py={2}
                             as={Link}
@@ -230,7 +234,7 @@ const MobileNavItem = ({ label, children, link }: NavItem) => {
                                 textDecoration: "none"
                             }}
                         >
-                            <Text fontWeight={600} color={useColorModeValue("gray.600", "gray.200")}>
+                            <Text fontWeight={600} color={textColor}>
                                 {label}
                             </Text>
                             {children && (
@@ -254,7 +258,7 @@ const MobileNavItem = ({ label, children, link }: NavItem) => {
                             textDecoration: "none"
                         }}
                     >
-                        <Text fontWeight={600} color={useColorModeValue("gray.600", "gray.200")}>
+                        <Text fontWeight={600} color={textColor}>
                             {label}
                         </Text>
                         {children && (
@@ -282,7 +286,7 @@ const MobileNavItem = ({ label, children, link }: NavItem) => {
                     {children &&
                         children.map((child) =>
                             child.link != null ? (
-                                <RouteLink to={child.link} key={child.label}>
+                                <RouteLink href={child.link} key={child.label}>
                                     <Link py={2}>{child.label}</Link>
                                 </RouteLink>
                             ) : (
