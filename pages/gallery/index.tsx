@@ -1,20 +1,22 @@
 import { FC, useState, ReactElement } from "react";
-import { StaticImageData } from "next/image";
+import type { StaticImageData } from "next/image";
+import { useDisclosure } from "@chakra-ui/react";
+import { Tooltip } from "@chakra-ui/tooltip";
 import Image from 'next/future/image';
 import {
-    SimpleGrid,
-    Tooltip,
-    useDisclosure,
     Modal,
     ModalBody,
     ModalCloseButton,
     ModalContent,
     ModalHeader,
     ModalOverlay,
+} from "@chakra-ui/modal"
+import {
+    SimpleGrid,
     Divider,
     Text,
     Box,
-} from "@chakra-ui/react";
+} from "@chakra-ui/layout";
 
 // god save my life
 import img0 from "../../public/gallery/hayper/IMG_0497_EDITED.png";

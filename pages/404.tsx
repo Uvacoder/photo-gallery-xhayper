@@ -1,4 +1,4 @@
-import { Center } from "@chakra-ui/react";
+import { Center } from "@chakra-ui/layout";
 
 export default function NotImplemented() {
     return (

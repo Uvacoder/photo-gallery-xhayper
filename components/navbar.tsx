@@ -1,25 +1,28 @@
 // TODO: Rewrite this component
 
 import { HamburgerIcon, CloseIcon, ChevronDownIcon, ChevronRightIcon, MoonIcon, SunIcon } from "@chakra-ui/icons";
+import { IconButton, Button } from "@chakra-ui/button";
+import { Collapse } from "@chakra-ui/transition";
+import { Icon } from "@chakra-ui/icon";
 import RouteLink from "next/link";
 import {
-    Box,
-    Flex,
     Text,
-    IconButton,
-    Button,
     Stack,
-    Collapse,
-    Icon,
-    Popover,
-    PopoverTrigger,
-    PopoverContent,
+    Flex,
+    Box,
+    Link
+} from "@chakra-ui/layout";
+import {
     useColorModeValue,
     useBreakpointValue,
     useDisclosure,
-    useColorMode,
-    Link
+    useColorMode
 } from "@chakra-ui/react";
+import {
+    Popover,
+    PopoverTrigger,
+    PopoverContent,
+} from "@chakra-ui/popover";
 
 export default function Navbar() {
     const { colorMode, toggleColorMode } = useColorMode();
