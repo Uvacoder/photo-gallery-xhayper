@@ -4938,15 +4938,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prettier@npm:^2.7.1":
-  version: 2.7.1
-  resolution: "prettier@npm:2.7.1"
-  bin:
-    prettier: bin-prettier.js
-  checksum: 55a4409182260866ab31284d929b3cb961e5fdb91fe0d2e099dac92eaecec890f36e524b4c19e6ceae839c99c6d7195817579cdffc8e2c80da0cb794463a748b
-  languageName: node
-  linkType: hard
-
 "pretty-bytes@npm:^6.0.0":
   version: 6.0.0
   resolution: "pretty-bytes@npm:6.0.0"
@@ -5267,7 +5258,6 @@ __metadata:
     bootstrap-vue-3: ^0.3.3
     husky: ^8.0.1
     nuxt: 3.0.0-rc.10
-    prettier: ^2.7.1
     sass: ^1.54.9
     typescript: ^4.8.3
     vue-tsc: ^0.40.13
