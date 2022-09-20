@@ -1,5 +1,5 @@
 <script setup lang="tsx">
-import { useDark } from '@vueuse/core';
+import { useDark } from "@vueuse/core";
 
 const isDark = useDark();
 
@@ -30,7 +30,7 @@ const galleryData: ImageObject[][] = [
             tooltip: "Changed moderator's group image"
         },
         {
-            src: "/gallery/hayper/WolfMan.png",
+            src: "/gallery/hayper/WolfMan.png"
         },
         {
             src: "/gallery/hayper/PURPLEE.png",
@@ -129,23 +129,41 @@ const modalData = ref({
             <b-container fluid v-for="(rowData, index) in galleryData" align-content="start">
                 <b-row class="row-cols-auto gx-3 gy-3 mx-3 my-3">
                     <b-col align-self="center" v-for="imageData in rowData">
-                        <b-img :src="imageData.src" :alt="imageData.alt" width="256" height="256"
-                            style="object-fit: scale-down; max-width: 15rem; max-height: 15rem; cursor: pointer;" lazy
+                        <b-img
+                            :src="imageData.src"
+                            :alt="imageData.alt"
+                            width="256"
+                            height="256"
+                            style="object-fit: scale-down; max-width: 15rem; max-height: 15rem; cursor: pointer"
+                            lazy
                             fluid
-                            @click="() => {modalData.imageData = imageData; modalData.enabled = !modalData.enabled}" />
+                            @click="
+                                () => {
+                                    modalData.imageData = imageData;
+                                    modalData.enabled = !modalData.enabled;
+                                }
+                            "
+                        />
                     </b-col>
                 </b-row>
-                <hr class="border border-2" :class="{'bg-light': isDark, 'bg-dark': !isDark}"
-                    v-if="index != galleryData.length-1" />
+                <hr
+                    class="border border-2"
+                    :class="{ 'bg-light': isDark, 'bg-dark': !isDark }"
+                    v-if="index != galleryData.length - 1"
+                />
             </b-container>
-
         </b-container>
 
         <b-modal v-if="modalData.imageData != null" v-model="modalData.enabled" title="Image" hide-footer>
             <b-container class="mx-1 my-1">
-                <p v-if="modalData.imageData.tooltip">{{modalData.imageData.tooltip}}</p>
-                <b-img align-self="center" :src="modalData.imageData.src" :alt="modalData.imageData.alt"
-                    style="object-fit: scale-down;" fluid />
+                <p v-if="modalData.imageData.tooltip">{{ modalData.imageData.tooltip }}</p>
+                <b-img
+                    align-self="center"
+                    :src="modalData.imageData.src"
+                    :alt="modalData.imageData.alt"
+                    style="object-fit: scale-down"
+                    fluid
+                />
             </b-container>
         </b-modal>
     </div>

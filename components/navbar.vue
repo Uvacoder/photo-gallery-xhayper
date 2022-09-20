@@ -1,5 +1,5 @@
 <script setup lang="tsx">
-import { useDark, useToggle } from '@vueuse/core';
+import { useDark, useToggle } from "@vueuse/core";
 
 const isDark = useDark();
 const toggleDark = useToggle(isDark);
@@ -8,7 +8,7 @@ const router = useRouter();
 </script>
 
 <template>
-    <b-navbar toggleable="lg" dark sticky="top" style="background-color: #57739A;">
+    <b-navbar toggleable="lg" dark sticky="top" style="background-color: #57739a">
         <b-navbar-brand to="/">
             <b-img src="/favicon.png" width="48" />
         </b-navbar-brand>
@@ -23,14 +23,16 @@ const router = useRouter();
             </b-navbar-nav>
             <b-navbar-nav>
                 <b-nav-item href="https://github.com/xhayper/portfolio" target="_blank" rel="noopener">
-                    <b-button class='bi bi-github' :variant="isDark ? 'secondary' : 'light'" />
+                    <b-button class="bi bi-github" :variant="isDark ? 'secondary' : 'light'" />
                 </b-nav-item>
                 <b-nav-item>
                     <b-button @click="toggleDark()" :variant="isDark ? 'secondary' : 'light'">
-                        <i :class="{
-                            'bi bi-moon-fill': isDark,
-                            'bi bi-sun': !isDark
-                        }" />
+                        <i
+                            :class="{
+                                'bi bi-moon-fill': isDark,
+                                'bi bi-sun': !isDark
+                            }"
+                        />
                     </b-button>
                 </b-nav-item>
             </b-navbar-nav>

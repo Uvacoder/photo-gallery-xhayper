@@ -1,9 +1,7 @@
 <script setup lang="tsx">
 useHead({
     title: "hayper",
-    link: [
-        { rel: "icon", type: "image/png", href: "/favicon.png" }
-    ],
+    link: [{ rel: "icon", type: "image/png", href: "/favicon.png" }],
     meta: [
         { name: "viewport", content: "width=device-width, initial-scale=1, shrink-to-fit=no" },
         { name: "theme-color", content: "#57739A" },
@@ -20,7 +18,7 @@ useHead({
         { name: "twitter:description", content: "Furry | Backend developer" },
         { name: "twitter:image", content: "https://portfolio-xhayper.vercel.app/gallery/hayper/WOOOO.png" }
     ]
-})
+});
 </script>
 
 <template>
