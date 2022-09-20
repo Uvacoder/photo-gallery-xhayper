@@ -5,6 +5,9 @@ export default defineNuxtConfig({
     sourcemap: {
         client: true
     },
+    alias: {
+        bootstrap: "bootstrap/dist/js/boostrap.esm.js"
+    },
     vite: {
         build: {
             sourcemap: true
