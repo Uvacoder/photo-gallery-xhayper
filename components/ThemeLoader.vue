@@ -17,6 +17,7 @@ useHead({
     }
 })();
 `,
+      renderPriority: -1,
     },
   ],
 });

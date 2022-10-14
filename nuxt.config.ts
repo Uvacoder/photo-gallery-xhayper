@@ -1,7 +1,7 @@
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
-    ssr: false,
-    target: 'static',
+    ssr: true,
+    target: 'server',
     modules: ["bootstrap-vue-3/nuxt", "@vueuse/nuxt"],
     css: ["@/assets/css/global.scss"],
     sourcemap: {
