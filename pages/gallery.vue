@@ -168,9 +168,9 @@ const modalData = ref({
     </b-container>
 
     <b-modal
+      v-model="modalData.enabled"
       v-if="modalData.imageData != null"
       title="Image"
-      :modelValue="modalData.enabled"
       :header-class="`${!isDark ? 'bg-light' : 'bg-dark'} ${
         !isDark ? 'text-black' : 'text-white'
       } ${!isDark ? 'btn-black' : 'btn-white'}`"
