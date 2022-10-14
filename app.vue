@@ -23,6 +23,7 @@ useHead({
 
 <template>
     <div>
+	<ThemeLoader />
         <NuxtLayout>
             <NuxtPage />
         </NuxtLayout>
