@@ -1,6 +1,4 @@
-<script setup lang="tsx">
-import { useDark } from "@vueuse/core";
-
+<script setup lang="ts">
 const isDark = useDark();
 
 type ImageObject = {
