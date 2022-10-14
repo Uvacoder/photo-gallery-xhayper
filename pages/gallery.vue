@@ -35,6 +35,10 @@ const galleryData: ImageObject[][] = [
         {
             src: "/gallery/hayper/PURPLEE.png",
             tooltip: "*INHALES* PURPLEEEEEEEEEE"
+        },
+        {
+            src: "/gallery/hayper/useruploads_bdd2411b-2ec6-4153-ab40-d7f28a5cf0b7_kofimissions9.png",
+            tooltip: "I don't know what to say, this is also one of my most favorite art.... it's just..."
         }
     ],
     [
