@@ -1,8 +1,5 @@
 <script setup lang="ts">
-const isDark = useDark({
-  storageKey: "theme",
-});
-const toggleDark = useToggle(isDark);
+const { isDark, toggleDark } = useTheme();
 
 const router = useRouter();
 </script>

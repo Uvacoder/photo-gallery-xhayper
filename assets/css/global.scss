@@ -5,11 +5,12 @@ $bootstrap-icons-font-dir: "bootstrap-icons/font/fonts/";
 @import "bootstrap-icons/font/bootstrap-icons.scss";
 
 body {
-    transition: background-color 0.1s ease;
+  transition: background-color 0.1s ease;
 }
 
 html.dark {
-    body {
-        background-color: $gray-800;
-    }
+  body {
+    background-color: $gray-800;
+    color: white;
+  }
 }
