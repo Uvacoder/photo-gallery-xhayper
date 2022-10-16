@@ -40,6 +40,9 @@ const galleryData: ImageObject[][] = [
       tooltip:
         "I don't know what to say, this is also one of my most favorite art.... it's just...",
     },
+    {
+      src: "/gallery/hayper/Untitled58_1.png"
+    }
   ],
   [
     {
