@@ -1,3 +1,5 @@
+<style lang="scss" src="~/assets/styles/global.scss" />
+
 <script setup lang="ts">
 useHead({
   title: "hayper",
