@@ -140,6 +140,7 @@ const modalData = ref({
       >
         <b-row class="row-cols-auto gx-3 gy-3 mx-3 my-3">
           <b-col align-self="center" v-for="imageData in rowData">
+            <b-container style="display: flex; justify-content: center; align-items: center; max-width: 15rem; max-height: 15rem; width: 15rem; height: 15rem;">
             <b-img
               :src="imageData.src"
               :alt="imageData.alt ?? 'Image'"
@@ -160,6 +161,7 @@ const modalData = ref({
                 }
               "
             />
+          </b-container>
           </b-col>
         </b-row>
         <hr
