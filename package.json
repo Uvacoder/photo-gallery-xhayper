@@ -1,14 +1,11 @@
 {
   "private": true,
   "scripts": {
-    "build": "nuxt build",
-    "dev": "nuxt dev",
-    "generate": "nuxt generate",
-    "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "build": "nuxi build",
+    "dev": "nuxi dev",
+    "start": "nuxi preview"
   },
   "devDependencies": {
-    "@nuxtjs/vercel-builder": "^0.23.0",
     "@popperjs/core": "^2.11.6",
     "@types/bootstrap": "^5.2.5",
     "@vueuse/core": "^9.3.1",
@@ -16,7 +13,7 @@
     "bootstrap": "^5.2.2",
     "bootstrap-icons": "^1.9.1",
     "bootstrap-vue-3": "^0.3.12",
-    "nuxt": "3.0.0-rc.11",
+    "nuxt": "^3.0.0-rc.11",
     "sass": "^1.55.0",
     "sass-loader": "^13.1.0",
     "typescript": "^4.8.4",
