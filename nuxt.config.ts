@@ -1,9 +1,9 @@
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
   ssr: true,
-  target: 'server',
+  target: "server",
   modules: ["bootstrap-vue-3/nuxt", "@vueuse/nuxt"],
-  css: ["@/assets/css/global.scss"],
+  css: ["bootstrap/dist/css/bootstrap.css", "~/assets/styles/global.scss"],
   sourcemap: {
     client: true,
     server: true,
@@ -16,8 +16,5 @@ export default defineNuxtConfig({
   typescript: {
     strict: true,
     typeCheck: true,
-    tsConfig: {
-      skipLibCheck: true,
-    },
   },
 });

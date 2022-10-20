@@ -1,4 +1,4 @@
-<script setup lang="tsx">
+<script setup lang="ts">
 useHead({
   title: "hayper",
   link: [{ rel: "icon", type: "image/png", href: "/favicon.png" }],

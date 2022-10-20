@@ -133,69 +133,43 @@ const modalData = ref({
 <template>
   <client-only>
     <b-container fluid>
-      <b-container
-        fluid
-        v-for="(rowData, index) in galleryData"
-        align-content="start"
-      >
+      <b-container fluid v-for="(rowData, index) in galleryData" align-content="start">
         <b-row class="row-cols-auto gx-3 gy-3 mx-3 my-3">
           <b-col align-self="center" v-for="imageData in rowData">
-            <b-container style="display: flex; justify-content: center; align-items: center; max-width: 15rem; max-height: 15rem; width: 15rem; height: 15rem;">
-            <b-img
-              :src="imageData.src"
-              :alt="imageData.alt ?? 'Image'"
-              style="
+            <b-container
+              style="display: flex; justify-content: center; align-items: center; max-width: 15rem; max-height: 15rem; width: 15rem; height: 15rem;">
+              <b-img :src="imageData.src" :alt="imageData.alt ?? 'Image'" style="
                 object-fit: scale-down;
                 max-width: 15rem;
                 max-height: 15rem;
-                width: auto;
-                height: auto;
+                width: 15rem;
+                height: 15rem;
                 cursor: pointer;
-              "
-              lazy
-              fluid
-              @click="
+              " width="auto" height="100%" lazy fluid @click="
                 () => {
                   modalData.imageData = imageData;
                   modalData.enabled = !modalData.enabled;
                 }
-              "
-            />
-          </b-container>
+              " />
+            </b-container>
           </b-col>
         </b-row>
-        <hr
-          class="border border-2"
-          :class="{ 'bg-light': isDark, 'bg-dark': !isDark }"
-          v-if="index != galleryData.length - 1"
-        />
+        <hr class="border border-2" :class="{ 'bg-light': isDark, 'bg-dark': !isDark }"
+          v-if="index != galleryData.length - 1" />
       </b-container>
     </b-container>
 
-    <b-modal
-      v-model="modalData.enabled"
-      v-if="modalData.imageData != null"
-      title="Image"
-      :header-class="`${!isDark ? 'bg-light' : 'bg-dark'} ${
-        !isDark ? 'text-black' : 'text-white'
-      } ${!isDark ? 'btn-black' : 'btn-white'}`"
-      :body-class="`${!isDark ? 'bg-light' : 'bg-dark'} ${
-        !isDark ? 'text-black' : 'text-white'
-      } ${!isDark ? 'btn-black' : 'btn-white'}`"
-      :headerCloseWhite="isDark"
-      hide-footer
-    >
+    <b-modal v-model="modalData.enabled" v-if="modalData.imageData != null" title="Image" :header-class="`${!isDark ? 'bg-light' : 'bg-dark'} ${
+      !isDark ? 'text-black' : 'text-white'
+    } ${!isDark ? 'btn-black' : 'btn-white'}`" :body-class="`${!isDark ? 'bg-light' : 'bg-dark'} ${
+      !isDark ? 'text-black' : 'text-white'
+    } ${!isDark ? 'btn-black' : 'btn-white'}`" :headerCloseWhite="isDark" hide-footer>
       <b-container class="mx-1 my-1">
         <p v-if="modalData.imageData.tooltip">
           {{ modalData.imageData.tooltip }}
         </p>
-        <b-img
-          align-self="center"
-          :src="modalData.imageData.src"
-          :alt="modalData.imageData.alt ?? 'Image'"
-          style="object-fit: scale-down"
-          fluid
-        />
+        <b-img align-self="center" :src="modalData.imageData.src" :alt="modalData.imageData.alt ?? 'Image'"
+          style="object-fit: scale-down" fluid />
       </b-container>
     </b-modal>
   </client-only>

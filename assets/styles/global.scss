@@ -1,8 +1,7 @@
 @import "bootstrap/scss/bootstrap";
-// @import "bootstrap-vue-3/src/styles/styles.scss";
 
 $bootstrap-icons-font-dir: "bootstrap-icons/font/fonts/";
-@import "bootstrap-icons/font/bootstrap-icons.scss";
+@import "bootstrap-icons/font/bootstrap-icons";
 
 body {
   transition: background-color 0.1s ease;
