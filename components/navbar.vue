@@ -6,7 +6,7 @@
           <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
             <!-- Mobile menu button-->
             <DisclosureButton
-              class="inline-flex items-center justify-center rounded-md p-2 bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+              class="inline-flex items-center justify-center rounded-md p-2 text-white bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
               <span class="sr-only">Open main menu</span>
               <svg v-if="!open" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                 stroke="currentColor" class="block w-6 h-6" aria-hidden="true">
@@ -21,8 +21,10 @@
           </div>
           <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
             <div class="flex flex-shrink-0 items-center">
-              <NuxtImg class="block h-8 w-auto lg:hidden" src="/favicon.png" alt="sona" />
-              <NuxtImg class="hidden h-8 w-auto lg:block" src="/favicon.png" alt="sona" />
+              <router-link to="/">
+                <NuxtImg class="block h-8 w-auto lg:hidden" src="/favicon.png" alt="logo" />
+                <NuxtImg class="hidden h-8 w-auto lg:block" src="/favicon.png" alt="logo" />
+              </router-link>
             </div>
             <div class="hidden sm:ml-6 sm:block">
               <div class="flex space-x-4">
@@ -37,9 +39,12 @@
 
       <DisclosurePanel class="sm:hidden">
         <div class="space-y-1 px-2 pt-2 pb-3">
-          <DisclosureButton v-for="item in navigation" :key="item.name" as="router-link" :to="item.href"
-            :class="[item.current() ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white', 'block px-3 py-2 rounded-md text-base font-medium']"
-            :aria-current="item.current() ? 'page' : undefined">{{ item.name }}</DisclosureButton>
+          <router-link v-for="item in navigation" :key="item.name" :to="item.href">
+            <DisclosureButton as="div" :class="[item.current() ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
+            'block px-3 py-2 rounded-md text-base font-medium']" :aria-current="item.current() ? 'page' : undefined">
+              {{ item.name }}
+            </DisclosureButton>
+          </router-link>
         </div>
       </DisclosurePanel>
     </Disclosure>
