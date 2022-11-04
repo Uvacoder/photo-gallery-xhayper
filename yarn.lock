@@ -392,15 +392,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@heroicons/vue@npm:^2.0.13":
-  version: 2.0.13
-  resolution: "@heroicons/vue@npm:2.0.13"
-  peerDependencies:
-    vue: ">= 3"
-  checksum: 7ebb6ce0884ac77dfade4f44665216270beedda87e6b73bbad9e0ee0043e23fd97a3af16eb798a31a87429df1809e3b21d1bc4a7e4f3e6eaba9ab9a11b148294
-  languageName: node
-  linkType: hard
-
 "@ioredis/commands@npm:^1.1.1":
   version: 1.2.0
   resolution: "@ioredis/commands@npm:1.2.0"
@@ -5805,7 +5796,6 @@ __metadata:
   resolution: "root-workspace-0b6124@workspace:."
   dependencies:
     "@headlessui/vue": ^1.7.4
-    "@heroicons/vue": ^2.0.13
     "@nuxt/image-edge": 1.0.0-27769790.4b27db3
     "@vueuse/core": ^9.4.0
     "@vueuse/nuxt": ^9.4.0
