@@ -2,7 +2,7 @@
 export default defineNuxtConfig({
   ssr: true,
   target: "server",
-  modules: ["bootstrap-vue-3/nuxt", "@vueuse/nuxt"],
+  modules: ["nuxt-windicss", "@nuxt/image-edge", "@vueuse/nuxt"],
   css: ["@/assets/styles/global.scss"],
   sourcemap: {
     client: true,

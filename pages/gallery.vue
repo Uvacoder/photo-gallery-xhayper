@@ -1,5 +1,60 @@
+<template>
+  <div>
+    <!-- Gallery itself -->
+    <div class="w-screen">
+      <div class="w-full" v-for="(rowData, index) in galleryData">
+        <div class="flex flex-wrap gap-8 mx-10 my-10">
+          <div class="flex justify-center w-50 h-50" v-for="imageData in rowData">
+            <NuxtImg fit="inside" :src="imageData.src" :alt="imageData.alt" quality="50" loading="lazy"
+              style="max-width: 12.5rem; max-height: 12.5rem;" @click="() => {
+                modalData.imageData = imageData;
+                modalData.enabled = !modalData.enabled;
+              }" />
+          </div>
+        </div>
+        <hr class="border border-2 border-gray-600" v-if="galleryData.length !== index + 1" />
+      </div>
+    </div>
+
+    <!-- Modal -->
+    <TransitionRoot appear :show="modalData.enabled" as="template">
+      <Dialog as="div" :open="modalData.enabled" @close="(s) => modalData.enabled = s" class="relative z-10">
+        <TransitionChild as="template" enter="duration-300 ease-out" enter-from="opacity-0" enter-to="opacity-100"
+          leave="duration-200 ease-in" leave-from="opacity-100" leave-to="opacity-0">
+          <div class="fixed inset-0 bg-black bg-opacity-70" />
+        </TransitionChild>
+
+        <div class="fixed inset-0 overflow-y-auto">
+          <div class="flex min-h-full items-center justify-center p-4 text-center">
+            <TransitionChild as="template" enter="duration-300 ease-out" enter-from="opacity-0" enter-to="opacity-100"
+              leave="duration-200 ease-in" leave-from="opacity-100" leave-to="opacity-0">
+              <DialogPanel
+                class="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all dark:bg-gray-700">
+                <div class="container flex content-center align-baseline">
+                  <DialogTitle as="h3" class="text-lg font-medium leading-6 text-gray-900 dark:text-light-600">
+                    Image
+                  </DialogTitle>
+                </div>
+                <div class="mt-2">
+                  <NuxtImg :src="modalData.imageData?.src" :alt="modalData.imageData?.src" :quality="100" />
+                </div>
+              </DialogPanel>
+            </TransitionChild>
+          </div>
+        </div>
+      </Dialog>
+    </TransitionRoot>
+  </div>
+</template>
+
 <script setup lang="ts">
-const { isDark } = useTheme();
+import {
+  Dialog,
+  DialogPanel,
+  DialogTitle,
+  TransitionRoot,
+  TransitionChild
+} from '@headlessui/vue';
 
 type ImageObject = {
   src: string;
@@ -129,48 +184,3 @@ const modalData = ref({
   imageData?: ImageObject;
 });
 </script>
-
-<template>
-  <client-only>
-    <b-container fluid>
-      <b-container fluid v-for="(rowData, index) in galleryData" align-content="start">
-        <b-row class="row-cols-auto gx-3 gy-3 mx-3 my-3">
-          <b-col align-self="center" v-for="imageData in rowData">
-            <b-container
-              style="display: flex; justify-content: center; align-items: center; max-width: 15rem; max-height: 15rem; width: 15rem; height: 15rem;">
-              <b-img :src="imageData.src" :alt="imageData.alt ?? 'Image'" style="
-                object-fit: scale-down;
-                max-width: 15rem;
-                max-height: 15rem;
-                width: 15rem;
-                height: 15rem;
-                cursor: pointer;
-              " width="auto" height="100%" lazy fluid @click="
-                () => {
-                  modalData.imageData = imageData;
-                  modalData.enabled = !modalData.enabled;
-                }
-              " />
-            </b-container>
-          </b-col>
-        </b-row>
-        <hr class="border border-2" :class="{ 'bg-light': isDark, 'bg-dark': !isDark }"
-          v-if="index != galleryData.length - 1" />
-      </b-container>
-    </b-container>
-
-    <b-modal v-model="modalData.enabled" v-if="modalData.imageData != null" title="Image" :header-class="`${!isDark ? 'bg-light' : 'bg-dark'} ${
-      !isDark ? 'text-black' : 'text-white'
-    } ${!isDark ? 'btn-black' : 'btn-white'}`" :body-class="`${!isDark ? 'bg-light' : 'bg-dark'} ${
-      !isDark ? 'text-black' : 'text-white'
-    } ${!isDark ? 'btn-black' : 'btn-white'}`" :headerCloseWhite="isDark" hide-footer>
-      <b-container class="mx-1 my-1">
-        <p v-if="modalData.imageData.tooltip">
-          {{ modalData.imageData.tooltip }}
-        </p>
-        <b-img align-self="center" :src="modalData.imageData.src" :alt="modalData.imageData.alt ?? 'Image'"
-          style="object-fit: scale-down" fluid />
-      </b-container>
-    </b-modal>
-  </client-only>
-</template>
