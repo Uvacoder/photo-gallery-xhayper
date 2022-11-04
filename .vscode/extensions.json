@@ -1,7 +1,3 @@
 {
-  "recommendations": [
-    "vue.volar",
-    "voorjaar.windicss-intellisense",
-    "esbenp.prettier-vscode"
-  ]
+  "recommendations": ["vue.volar", "voorjaar.windicss-intellisense"]
 }
