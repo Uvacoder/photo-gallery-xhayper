@@ -5,7 +5,7 @@
       <div class="w-full" v-for="(rowData, index) in galleryData">
         <div class="flex flex-wrap gap-8 mx-10 my-10">
           <div class="flex justify-center w-50 h-50" v-for="imageData in rowData">
-            <NuxtImg fit="inside" :src="imageData.src" :alt="imageData.alt" quality="50" loading="lazy"
+            <NuxtImg fit="inside" :src="imageData.src" :alt="imageData.alt" quality="25" loading="lazy" placeholder
               style="max-width: 12.5rem; max-height: 12.5rem;" @click="() => {
                 modalData.imageData = imageData;
                 modalData.enabled = !modalData.enabled;
@@ -36,7 +36,7 @@
                   </DialogTitle>
                 </div>
                 <div class="mt-2">
-                  <NuxtImg :src="modalData.imageData?.src" :alt="modalData.imageData?.src" :quality="100" />
+                  <NuxtImg :src="modalData.imageData?.src" :alt="modalData.imageData?.src" :quality="100" placeholder />
                 </div>
               </DialogPanel>
             </TransitionChild>
