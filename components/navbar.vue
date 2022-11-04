@@ -21,16 +21,16 @@
           </div>
           <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
             <div class="flex flex-shrink-0 items-center">
-              <router-link to="/">
+              <NuxtLink to="/">
                 <NuxtImg class="block h-8 w-auto lg:hidden" src="/favicon.png" alt="logo" />
                 <NuxtImg class="hidden h-8 w-auto lg:block" src="/favicon.png" alt="logo" />
-              </router-link>
+              </NuxtLink>
             </div>
             <div class="hidden sm:ml-6 sm:block">
               <div class="flex space-x-4">
-                <router-link v-for="item in navigation" :key="item.name" :to="item.href"
+                <NuxtLink v-for="item in navigation" :key="item.name" :to="item.href"
                   :class="[item.current() ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white', 'px-3 py-2 rounded-md text-sm font-medium']"
-                  :aria-current="item.current() ? 'page' : undefined">{{ item.name }}</router-link>
+                  :aria-current="item.current() ? 'page' : undefined">{{ item.name }}</NuxtLink>
               </div>
             </div>
           </div>
@@ -39,12 +39,12 @@
 
       <DisclosurePanel class="sm:hidden">
         <div class="space-y-1 px-2 pt-2 pb-3">
-          <router-link v-for="item in navigation" :key="item.name" :to="item.href">
+          <NuxtLink v-for="item in navigation" :key="item.name" :to="item.href">
             <DisclosureButton as="div" :class="[item.current() ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
             'block px-3 py-2 rounded-md text-base font-medium']" :aria-current="item.current() ? 'page' : undefined">
               {{ item.name }}
             </DisclosureButton>
-          </router-link>
+          </NuxtLink>
         </div>
       </DisclosurePanel>
     </Disclosure>
