@@ -53,8 +53,8 @@
 <script setup lang="ts">
 import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue';
 
-const router = useRouter();
-const isActive = (href: string) => href.replace(/\/$/, "") === router.currentRoute.value.path.replace(/\/$/, "");
+const route = useRoute();
+const isActive = (href: string) => href.replace(/\/$/, "") === route.path.replace(/\/$/, "");
 
 const navigation = [
   { name: 'Home', href: "/", enabled: true, current: () => isActive("/") },
