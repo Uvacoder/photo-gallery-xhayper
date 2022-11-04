@@ -10,6 +10,8 @@
 </template>
 
 <script setup lang="ts">
+import 'source-map-support/register';
+
 useHead({
   title: "hayper",
   link: [{ rel: "icon", type: "image/png", href: "/favicon.png" }, { rel: "stylesheet", href: "https://rsms.me/inter/inter.css" }],
